@@ -1,0 +1,280 @@
+/* Light Mode Variables */
+:root {
+    --bg-color: #f5f7fa;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-secondary: #666666;
+    --border-color: #e0e0e0;
+    --primary-color: #007bff;
+    --metric-bg: #f8f9fa;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dark Mode Variables */
+  .dark {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #f5f5f5;
+    --text-secondary: #aaaaaa;
+    --border-color: #333333;
+    --primary-color: #1a73e8;
+    --metric-bg: #2d2d2d;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Base Styles */
+  .dashboard {
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-section {
+    padding: 20px;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  /* Navigation */
+  .dashboard-nav {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+  
+  .nav-button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--metric-bg);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-button.active {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  /* Dashboard Content */
+  .dashboard-content {
+    padding: 0 20px 20px;
+  }
+  
+  /* Metrics Section */
+  .metrics-section {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .metric-card {
+    background: var(--metric-bg);
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .metric-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0 0;
+    color: var(--text-color);
+  }
+  
+  /* Charts */
+  .chart-section {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .steps-chart {
+    display: flex;
+    height: 200px;
+    margin-top: 20px;
+  }
+  
+  .chart-y-axis {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-right: 10px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    padding-bottom: 25px;
+  }
+  
+  .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    gap: 15px;
+  }
+  
+  .chart-bar {
+    background: var(--primary-color);
+    width: 30px;
+    height: var(--height);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s ease;
+  }
+  
+  .chart-x-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 12px;
+  }
+  
+  /* Activity Section */
+  .activity-section {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .activity-chart {
+    display: flex;
+    height: 180px;
+    margin: 20px 0;
+  }
+  
+  .activity-bars {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    gap: 30px;
+  }
+  
+  .activity-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+    height: var(--height);
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .running { background: #28a745; }
+  .cycling { background: #17a2b8; }
+  .weightlifting { background: #ffc107; }
+  
+  /* Recent Activity */
+  .recent-activity {
+    margin-top: 30px;
+  }
+  
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .activity-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--metric-bg);
+    border-radius: 8px;
+  }
+  
+  .activity-user {
+    font-weight: 500;
+  }
+  
+  .activity-info {
+    display: flex;
+    gap: 20px;
+    color: var(--text-secondary);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .activity-bars {
+      flex-direction: column;
+      height: auto;
+      gap: 10px;
+    }
+    
+    .activity-bar {
+      width: 100%;
+      height: 40px !important;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 15px;
+    }
+    
+    .activity-item {
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .activity-info {
+      justify-content: space-between;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .dashboard-nav {
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    
+    .chart-bars {
+      gap: 8px;
+    }
+    
+    .chart-bar {
+      width: 20px;
+    }
+  }
